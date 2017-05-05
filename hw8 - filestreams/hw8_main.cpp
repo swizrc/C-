@@ -1,0 +1,27 @@
+//Name: Samuel Itschner
+//Date: 3/19/2012
+//Description: Generates random lines of poetry
+//File: hw8_main.cpp
+
+#include "hw8.h"
+int main()
+{
+  char again;
+  do
+  {
+    int lines;
+    srand(time(NULL));//Seeds the random number generator
+    greeting();
+    lines = num_lines();
+    for(int r =0; r < lines; r++)
+    {
+      makePoem();
+      cout << endl;
+    }
+    cout << endl << "Wanna go again?(y/n)" << endl; //Asks the user if
+    //they want to repeat the program
+    cin >> again;
+  }
+  while(again == 'y'); //repeats the program if user answered 'y'
+  goodbye();
+}
